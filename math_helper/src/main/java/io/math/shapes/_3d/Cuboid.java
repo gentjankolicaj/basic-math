@@ -1,7 +1,15 @@
 package io.math.shapes._3d;
 
-import io.math.shapes.Shape;
+import java.util.Map;
 
-public class Cuboid implements Shape {
+import io.math.algebra.DetailType;
+
+public class Cuboid extends Shape3D {
+
+	@Override
+	public Map<DetailType, Object> getDetails() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

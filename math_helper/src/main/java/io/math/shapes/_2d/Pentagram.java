@@ -1,7 +1,15 @@
 package io.math.shapes._2d;
 
-import io.math.shapes.Shape;
+import java.util.Map;
 
-public class Pentagram implements Shape {
+import io.math.algebra.DetailType;
+
+public class Pentagram extends Shape2D {
+
+	@Override
+	public Map<DetailType, Object> getDetails() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

@@ -7,6 +7,7 @@ import org.junit.Test;
 import io.math.algebra.Point;
 import io.math.shapes._2d.Line;
 import io.math.shapes._2d.Square;
+import io.math.shapes._2d.Triangle;
 
 public class CalculatorTest {
 
@@ -15,12 +16,11 @@ public class CalculatorTest {
 	@Test
 	public void testCalculatePerimeterShape2D() {
 		Line line=new Line(new Point(1),new Point(2));
-		Square square=new Square(new Point(1,0),new Point(1,0),new Point(1,1),new Point(0,1));
-		double value=calc.calculatePerimeter(line);
-		double value2=calc.calculatePerimeter(square);
-		System.out.println(value);
-		System.out.println(value2);
-		
+		Square square=new Square(new Point(0,0),new Point(1,0),new Point(1,1),new Point(0,1));
+		Triangle triangle=new Triangle(new Point(0,0),new Point(3,0),new Point(2,1));
+		double[] resultArray=calc.calculatePerimeters(line,square,triangle);
+		for(double var:resultArray)
+			System.out.println(var);
 	}
 
 	@Test

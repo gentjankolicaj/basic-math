@@ -31,8 +31,7 @@ public class Calculator extends AbstractCalculator{
 
 	@Override
 	public double[] calculatePerimeters(Shape2D... shape2d) throws RuntimeException {
-		// TODO Auto-generated method stub
-		return null;
+		return perimeterFormula.apply(shape2d);
 	}
 
 	@Override

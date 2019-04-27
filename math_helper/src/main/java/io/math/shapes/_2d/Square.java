@@ -1,11 +1,15 @@
 package io.math.shapes._2d;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import io.math.algebra.DetailType;
 import io.math.algebra.Point;
+import io.math.algebra.ShapeInformationType;
 
 public class Square extends Shape2D {
+	
+	private ShapeInformationType shapeInformationType;
 	
 	private Point pointA;
 	private Point pointB;
@@ -20,11 +24,13 @@ public class Square extends Shape2D {
 		this.pointB = pointB;
 		this.pointC = pointC;
 		this.pointD = pointD;
+		this.shapeInformationType = ShapeInformationType.POINT;
 	}	
 
 	public Square(double base) {
 		super();
 		this.base=base;
+		this.shapeInformationType = ShapeInformationType.COMMON_MEASURE;
 
 	}
 	
@@ -70,8 +76,23 @@ public class Square extends Shape2D {
 
 	@Override
 	public Map<DetailType, Object> getDetails() {
-		// TODO Auto-generated method stub
-		return null;
+		Double[] commonMeasure = { new Double(base) };
+		Point[] points = { pointA, pointB, pointC ,pointD};
+		Map<DetailType, Object> map = new HashMap<>();
+		map.put(DetailType.POINT, points);
+		map.put(DetailType.COMMON_MEASURE, commonMeasure);
+		return map;
 	}
+
+	@Override
+	public ShapeInformationType getShapeInformationType() {
+		return shapeInformationType;
+	}
+
+	@Override
+	public String toString() {
+		return "Square [shapeInformationType=" + shapeInformationType + ", pointA=" + pointA + ", pointB=" + pointB
+				+ ", pointC=" + pointC + ", pointD=" + pointD +", base=" + base + "]";
+	}	
 
 }

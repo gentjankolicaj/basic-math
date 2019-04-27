@@ -5,5 +5,6 @@ public interface Shape<K,V> {
 	
 	public abstract Map<K,V> getDetails();
 	
+	public abstract ShapeInformationType getShapeInformationType();
 
 }

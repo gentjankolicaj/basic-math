@@ -79,5 +79,11 @@ public class Point {
 		return dimension;
 	}
 
+	@Override
+	public String toString() {
+		return "Point [dimension=" + dimension + ", x=" + x + ", y=" + y + ", z=" + z + ", w=" + w + "]";
+	}
+
+	
 	
 }

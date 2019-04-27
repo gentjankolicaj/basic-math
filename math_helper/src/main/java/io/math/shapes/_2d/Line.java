@@ -1,14 +1,19 @@
 package io.math.shapes._2d;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import io.math.algebra.DetailType;
 import io.math.algebra.Point;
+import io.math.algebra.ShapeInformationType;
 
 public class Line extends Shape2D{
 	
+	private ShapeInformationType shapeInformationType;
+	
 	private Point pointA;
 	private Point pointB;
+	
 	private double a;
 	private double b;
 	
@@ -18,18 +23,21 @@ public class Line extends Shape2D{
 		super();
 		this.pointA = pointA;
 		this.pointB = pointB;
+		this.shapeInformationType=ShapeInformationType.POINT;
 	}
 
 	public Line(double a, double b) {
 		super();
 		this.a = a;
 		this.b = b;
+		this.shapeInformationType=ShapeInformationType.SIDE_MEASURE;
 	}
 	
 
 	public Line(double length) {
 		super();
 		this.length=length;
+		this.shapeInformationType=ShapeInformationType.COMMON_MEASURE;
 	}
 
 	public Point getPointA() {
@@ -74,8 +82,23 @@ public class Line extends Shape2D{
 
 	@Override
 	public Map<DetailType, Object> getDetails() {
-		// TODO Auto-generated method stub
-		return null;
+		Double[] measures= {new Double(a),new Double(b)};
+		Point[] points= {pointA,pointB};
+		Map<DetailType,Object> map= new HashMap<>();
+		map.put(DetailType.POINT, points);
+		map.put(DetailType.COMMON_MEASURE,measures);
+		return map;
+	}
+
+	@Override
+	public ShapeInformationType getShapeInformationType() {
+	    return shapeInformationType;
+	}
+
+	@Override
+	public String toString() {
+		return "Line [shapeInformationType=" + shapeInformationType + ", pointA=" + pointA + ", pointB=" + pointB
+				+ ", a=" + a + ", b=" + b + ", length=" + length + "]";
 	}
 
 }

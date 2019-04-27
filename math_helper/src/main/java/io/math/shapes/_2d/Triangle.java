@@ -116,8 +116,8 @@ public class Triangle extends Shape2D {
 		Point[] points = { pointA, pointB, pointC };
 		Map<DetailType, Object> map = new HashMap<>();
 		map.put(DetailType.POINT, points);
-		map.put(DetailType.SIDE_MEASURE, sideMeasure);
 		map.put(DetailType.COMMON_MEASURE, commonMeasure);
+		map.put(DetailType.SIDE_MEASURE, sideMeasure);
 		return map;
 
 	}

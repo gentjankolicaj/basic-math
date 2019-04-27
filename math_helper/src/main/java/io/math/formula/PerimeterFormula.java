@@ -9,6 +9,7 @@ import io.math.shapes._2d.Line;
 import io.math.shapes._2d.Parallelogram;
 import io.math.shapes._2d.Pentagram;
 import io.math.shapes._2d.Rectangle;
+import io.math.shapes._2d.Rhombus;
 import io.math.shapes._2d.Shape2D;
 import io.math.shapes._2d.Square;
 import io.math.shapes._2d.Trapezoid;
@@ -59,6 +60,15 @@ public class PerimeterFormula implements Formula<Shape2D>{
 						
 			}else {
 				double s1=DistanceUtils.distance(s.getPointA(), s.getPointB());
+				return 4*s1;
+			}
+		}else if(t instanceof Rhombus) {
+			Rhombus r=(Rhombus)t;
+			if(r.getShapeInformationType().equals(ShapeInformationType.SIDE_MEASURE) ){
+				return 4*r.getSide();
+						
+			}else {
+				double s1=DistanceUtils.distance(r.getPointA(), r.getPointB());
 				return 4*s1;
 			}
 		}else if(t instanceof Rectangle) {

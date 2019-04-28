@@ -7,40 +7,44 @@ import io.math.algebra.DetailType;
 import io.math.algebra.Point;
 import io.math.algebra.ShapeInformationType;
 
+/**
+ * @author gentjan kolicaj
+ *
+ */
 public class Rhombus extends Shape2D {
 
-private ShapeInformationType shapeInformationType;
-	
+	private ShapeInformationType shapeInformationType;
+
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
 	private Point pointD;
-	
+
 	private double side;
-	
+
 	private double base;
 	private double height;
-	
+
 	public Rhombus(Point pointA, Point pointB, Point pointC, Point pointD) {
 		super();
 		this.pointA = pointA;
 		this.pointB = pointB;
 		this.pointC = pointC;
 		this.pointD = pointD;
-		this.shapeInformationType=ShapeInformationType.POINT;
+		this.shapeInformationType = ShapeInformationType.POINT;
 	}
 
-	public Rhombus( double side) {
+	public Rhombus(double side) {
 		super();
 		this.side = side;
-		this.shapeInformationType=ShapeInformationType.SIDE_MEASURE;
+		this.shapeInformationType = ShapeInformationType.SIDE_MEASURE;
 	}
 
 	public Rhombus(double base, double height) {
 		super();
 		this.base = base;
 		this.height = height;
-		this.shapeInformationType=ShapeInformationType.COMMON_MEASURE;
+		this.shapeInformationType = ShapeInformationType.COMMON_MEASURE;
 	}
 
 	public Point getPointA() {
@@ -99,17 +103,16 @@ private ShapeInformationType shapeInformationType;
 		this.height = height;
 	}
 
-
 	@Override
 	public Map<DetailType, Object> getDetails() {
-		Double[] commonMeasure = { new Double(base),new Double(height) };
-		Double[] sideMeasure = { new Double(side)};
-		Point[] points = { pointA, pointB, pointC ,pointD};
+		Double[] commonMeasure = { new Double(base), new Double(height) };
+		Double[] sideMeasure = { new Double(side) };
+		Point[] points = { pointA, pointB, pointC, pointD };
 		Map<DetailType, Object> map = new HashMap<>();
 		map.put(DetailType.POINT, points);
 		map.put(DetailType.COMMON_MEASURE, commonMeasure);
 		map.put(DetailType.SIDE_MEASURE, sideMeasure);
-		
+
 		return map;
 	}
 

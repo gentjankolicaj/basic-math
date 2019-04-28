@@ -7,17 +7,21 @@ import io.math.algebra.DetailType;
 import io.math.algebra.Point;
 import io.math.algebra.ShapeInformationType;
 
+/**
+ * @author gentjan kolicaj
+ *
+ */
 public class Square extends Shape2D {
-	
+
 	private ShapeInformationType shapeInformationType;
-	
+
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
 	private Point pointD;
-	
+
 	private double base;
-		
+
 	public Square(Point pointA, Point pointB, Point pointC, Point pointD) {
 		super();
 		this.pointA = pointA;
@@ -25,15 +29,15 @@ public class Square extends Shape2D {
 		this.pointC = pointC;
 		this.pointD = pointD;
 		this.shapeInformationType = ShapeInformationType.POINT;
-	}	
+	}
 
 	public Square(double base) {
 		super();
-		this.base=base;
+		this.base = base;
 		this.shapeInformationType = ShapeInformationType.COMMON_MEASURE;
 
 	}
-	
+
 	public Point getPointA() {
 		return pointA;
 	}
@@ -77,7 +81,7 @@ public class Square extends Shape2D {
 	@Override
 	public Map<DetailType, Object> getDetails() {
 		Double[] commonMeasure = { new Double(base) };
-		Point[] points = { pointA, pointB, pointC ,pointD};
+		Point[] points = { pointA, pointB, pointC, pointD };
 		Map<DetailType, Object> map = new HashMap<>();
 		map.put(DetailType.POINT, points);
 		map.put(DetailType.COMMON_MEASURE, commonMeasure);
@@ -92,7 +96,7 @@ public class Square extends Shape2D {
 	@Override
 	public String toString() {
 		return "Square [shapeInformationType=" + shapeInformationType + ", pointA=" + pointA + ", pointB=" + pointB
-				+ ", pointC=" + pointC + ", pointD=" + pointD +", base=" + base + "]";
-	}	
+				+ ", pointC=" + pointC + ", pointD=" + pointD + ", base=" + base + "]";
+	}
 
 }

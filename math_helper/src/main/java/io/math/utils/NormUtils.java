@@ -1,5 +1,8 @@
 package io.math.utils;
-
+/**
+ * @author gentjan kolicaj
+ *
+ */
 public class NormUtils {
 	
 	public static double absoluteNorm(double x) {

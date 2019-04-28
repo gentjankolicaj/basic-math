@@ -1,5 +1,8 @@
 package io.math.utils;
-
+/**
+ * @author gentjan kolicaj
+ *
+ */
 public class FormulaUtils {
 	
 	public static double usePythagorasTheorem(double a,double b) {
@@ -10,5 +13,7 @@ public class FormulaUtils {
 		double s=(a+b+c)/2;
 		return Math.sqrt(s*(s-a)*(s-b)*(s-c));
 	}
+	
+
 
 }

@@ -7,25 +7,28 @@ import io.math.formula.VolumeFormula;
 import io.math.shapes._2d.Shape2D;
 import io.math.shapes._3d.Shape3D;
 
-public class Calculator extends AbstractCalculator{
-	
+/**
+ * @author gentjan kolicaj
+ *
+ */
+public class Calculator extends AbstractCalculator {
+
 	private AreaFormula areaFormula;
 	private PerimeterFormula perimeterFormula;
 	private SurfaceAreaFormula surfaceAreaFormula;
 	private VolumeFormula volumeFormula;
-	
+
 	public Calculator() {
 		super();
-		this.areaFormula=new AreaFormula();
-		this.perimeterFormula=new PerimeterFormula();
-		this.surfaceAreaFormula=new SurfaceAreaFormula();
-		this.volumeFormula=new VolumeFormula();
+		this.areaFormula = new AreaFormula();
+		this.perimeterFormula = new PerimeterFormula();
+		this.surfaceAreaFormula = new SurfaceAreaFormula();
+		this.volumeFormula = new VolumeFormula();
 
 	}
 
 	@Override
 	public double calculatePerimeter(Shape2D shape2d) throws RuntimeException {
-		System.out.println(shape2d.getDetails());
 		return perimeterFormula.apply(shape2d);
 	}
 
@@ -36,8 +39,11 @@ public class Calculator extends AbstractCalculator{
 
 	@Override
 	public double calculatePerimeter(Shape2D... shape2d) throws RuntimeException {
-		// TODO Auto-generated method stub
-		return 0;
+		double[] arrayPerimeter = perimeterFormula.apply(shape2d);
+		double total = 0.0;
+		for (double tmp : arrayPerimeter)
+			total += tmp;
+		return total;
 	}
 
 	@Override
@@ -93,7 +99,5 @@ public class Calculator extends AbstractCalculator{
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
-	
 
 }

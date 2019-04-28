@@ -1,9 +1,11 @@
 package io.math.calculator;
 
-import io.math.exception.ShapeException;
 import io.math.shapes._2d.Shape2D;
 import io.math.shapes._3d.Shape3D;
-
+/**
+ * @author gentjan kolicaj
+ *
+ */
 public abstract class AbstractCalculator {
 	
 	

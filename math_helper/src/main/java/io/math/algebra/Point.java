@@ -1,5 +1,8 @@
 package io.math.algebra;
-
+/**
+ * @author gentjan kolicaj
+ *
+ */
 public class Point {
 
 	private Dimension dimension;

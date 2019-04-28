@@ -4,7 +4,10 @@ import java.util.Map;
 
 import io.math.algebra.DetailType;
 import io.math.algebra.ShapeInformationType;
-
+/**
+ * @author gentjan kolicaj
+ * Info: formuals not implemented yet
+ */
 public class Ellipsoid extends Shape3D {
 
 	@Override

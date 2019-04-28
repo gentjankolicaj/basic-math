@@ -7,6 +7,10 @@ import io.math.algebra.DetailType;
 import io.math.algebra.Point;
 import io.math.algebra.ShapeInformationType;
 
+/**
+ * @author gentjan kolicaj
+ *
+ */
 public class Triangle extends Shape2D {
 
 	private ShapeInformationType shapeInformationType;
@@ -133,7 +137,5 @@ public class Triangle extends Shape2D {
 				+ ", pointC=" + pointC + ", side1=" + side1 + ", side2=" + side2 + ", side3=" + side3 + ", height="
 				+ height + ", base=" + base + "]";
 	}
-	
-	
 
 }

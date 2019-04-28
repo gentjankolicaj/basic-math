@@ -7,10 +7,14 @@ import io.math.algebra.DetailType;
 import io.math.algebra.Point;
 import io.math.algebra.ShapeInformationType;
 
+/**
+ * @author gentjan kolicaj
+ *
+ */
 public class Rectangle extends Shape2D {
 
 	private ShapeInformationType shapeInformationType;
-	
+
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
@@ -18,7 +22,7 @@ public class Rectangle extends Shape2D {
 
 	private double length;
 	private double width;
-	
+
 	public Rectangle(Point pointA, Point pointB, Point pointC, Point pointD) {
 		super();
 		this.pointA = pointA;
@@ -26,8 +30,7 @@ public class Rectangle extends Shape2D {
 		this.pointC = pointC;
 		this.pointD = pointD;
 		this.shapeInformationType = ShapeInformationType.POINT;
-	}	
-
+	}
 
 	public Rectangle(double length, double width) {
 		super();
@@ -86,8 +89,8 @@ public class Rectangle extends Shape2D {
 
 	@Override
 	public Map<DetailType, Object> getDetails() {
-		Double[] commonMeasure = { new Double(length) ,new Double(width)};
-		Point[] points = { pointA, pointB, pointC ,pointD};
+		Double[] commonMeasure = { new Double(length), new Double(width) };
+		Point[] points = { pointA, pointB, pointC, pointD };
 		Map<DetailType, Object> map = new HashMap<>();
 		map.put(DetailType.POINT, points);
 		map.put(DetailType.COMMON_MEASURE, commonMeasure);
@@ -102,7 +105,7 @@ public class Rectangle extends Shape2D {
 	@Override
 	public String toString() {
 		return "Rectangle [shapeInformationType=" + shapeInformationType + ", pointA=" + pointA + ", pointB=" + pointB
-				+ ", pointC=" + pointC + ", pointD=" + pointD +", length="+ length + ", width=" + width + "]";
+				+ ", pointC=" + pointC + ", pointD=" + pointD + ", length=" + length + ", width=" + width + "]";
 	}
 
 }

@@ -7,6 +7,10 @@ import io.math.algebra.DetailType;
 import io.math.algebra.Point;
 import io.math.algebra.ShapeInformationType;
 
+/**
+ * @author gentjan kolicaj
+ *
+ */
 public class Trapezoid extends Shape2D {
 
 	private ShapeInformationType shapeInformationType;
@@ -141,9 +145,9 @@ public class Trapezoid extends Shape2D {
 
 	@Override
 	public Map<DetailType, Object> getDetails() {
-		Double[] sideMeasure = { new Double(side1),new Double(side2),new Double(side3),new Double(side4)};
-		Double[] commonMeasure = { new Double(base1) ,new Double(base2),new Double(height)};
-		Point[] points = { pointA, pointB, pointC ,pointD};
+		Double[] sideMeasure = { new Double(side1), new Double(side2), new Double(side3), new Double(side4) };
+		Double[] commonMeasure = { new Double(base1), new Double(base2), new Double(height) };
+		Point[] points = { pointA, pointB, pointC, pointD };
 		Map<DetailType, Object> map = new HashMap<>();
 		map.put(DetailType.POINT, points);
 		map.put(DetailType.SIDE_MEASURE, sideMeasure);

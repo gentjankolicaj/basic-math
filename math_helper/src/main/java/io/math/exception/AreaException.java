@@ -1,5 +1,8 @@
 package io.math.exception;
-
+/**
+ * @author gentjan kolicaj
+ *
+ */
 public class AreaException extends RuntimeException {
 
 	/**

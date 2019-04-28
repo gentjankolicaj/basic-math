@@ -7,18 +7,22 @@ import io.math.algebra.DetailType;
 import io.math.algebra.Point;
 import io.math.algebra.ShapeInformationType;
 
+/**
+ * @author gentjan kolicaj
+ *
+ */
 public class Parallelogram extends Shape2D {
-	
+
 	private ShapeInformationType shapeInformationType;
-	
+
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
 	private Point pointD;
-		
+
 	private double height;
 	private double base;
-	
+
 	public Parallelogram(Point pointA, Point pointB, Point pointC, Point pointD) {
 		super();
 		this.pointA = pointA;
@@ -27,7 +31,7 @@ public class Parallelogram extends Shape2D {
 		this.pointD = pointD;
 		this.shapeInformationType = ShapeInformationType.POINT;
 	}
-	
+
 	public Parallelogram(double height, double base) {
 		super();
 		this.height = height;
@@ -35,7 +39,6 @@ public class Parallelogram extends Shape2D {
 		this.shapeInformationType = ShapeInformationType.COMMON_MEASURE;
 	}
 
-	
 	public Point getPointA() {
 		return pointA;
 	}
@@ -86,8 +89,8 @@ public class Parallelogram extends Shape2D {
 
 	@Override
 	public Map<DetailType, Object> getDetails() {
-		Double[] commonMeasure = { new Double(height) ,new Double(base)};
-		Point[] points = { pointA, pointB, pointC ,pointD};
+		Double[] commonMeasure = { new Double(height), new Double(base) };
+		Point[] points = { pointA, pointB, pointC, pointD };
 		Map<DetailType, Object> map = new HashMap<>();
 		map.put(DetailType.POINT, points);
 		map.put(DetailType.COMMON_MEASURE, commonMeasure);
@@ -102,7 +105,7 @@ public class Parallelogram extends Shape2D {
 	@Override
 	public String toString() {
 		return "Parallelogram [shapeInformationType=" + shapeInformationType + ", pointA=" + pointA + ", pointB="
-				+ pointB + ", pointC=" + pointC + ", pointD=" + pointD +", height=" + height + ", base=" + base + "]";
+				+ pointB + ", pointC=" + pointC + ", pointD=" + pointD + ", height=" + height + ", base=" + base + "]";
 	}
 
 }

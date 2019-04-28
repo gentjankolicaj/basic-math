@@ -3,7 +3,10 @@ package io.math.utils;
 import io.math.algebra.Dimension;
 import io.math.algebra.Point;
 import io.math.exception.DimensionException;
-
+/**
+ * @author gentjan kolicaj
+ *
+ */
 public class DistanceUtils {
 
 	public static double distance(double x1, double x2) {

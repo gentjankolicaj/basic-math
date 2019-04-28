@@ -11,7 +11,7 @@ import io.math.algebra.ShapeInformationType;
  * @author gentjan kolicaj
  *
  */
-public class Cone extends Shape3D {
+public class SquarePyramid extends Shape3D {
 
 	private ShapeInformationType shapeInformationType;
 
@@ -19,10 +19,10 @@ public class Cone extends Shape3D {
 	private Point pointA;
 	private Point pointH;
 
-	private double radius;
+	private double baseLength;
 	private double height;
 
-	public Cone(Point pointO, Point pointA, Point pointH) {
+	public SquarePyramid(Point pointO, Point pointA, Point pointH) {
 		super();
 		this.pointO = pointO;
 		this.pointA = pointA;
@@ -30,9 +30,9 @@ public class Cone extends Shape3D {
 		this.shapeInformationType = ShapeInformationType.POINT;
 	}
 
-	public Cone(double radius, double height) {
+	public SquarePyramid(double baseLength, double height) {
 		super();
-		this.radius = radius;
+		this.baseLength = baseLength;
 		this.height = height;
 		this.shapeInformationType = ShapeInformationType.COMMON_MEASURE;
 	}
@@ -61,12 +61,12 @@ public class Cone extends Shape3D {
 		this.pointH = pointH;
 	}
 
-	public double getRadius() {
-		return radius;
+	public double getBaseLength() {
+		return baseLength;
 	}
 
-	public void setRadius(double radius) {
-		this.radius = radius;
+	public void setBaseLength(double baseLength) {
+		this.baseLength = baseLength;
 	}
 
 	public double getHeight() {
@@ -79,7 +79,7 @@ public class Cone extends Shape3D {
 
 	@Override
 	public Map<DetailType, Object> getDetails() {
-		Double[] measure = { new Double(radius), new Double(height) };
+		Double[] measure = { new Double(baseLength), new Double(height) };
 		Point[] points = { pointO, pointA, pointH };
 		Map<DetailType, Object> map = new HashMap<>();
 		map.put(DetailType.POINT, points);
@@ -94,8 +94,8 @@ public class Cone extends Shape3D {
 
 	@Override
 	public String toString() {
-		return "Cone [shapeInformationType=" + shapeInformationType + ", pointO=" + pointO + ", pointA=" + pointA
-				+ ", pointH=" + pointH + ", radius=" + radius + ", height=" + height + "]";
+		return "SquarePyramid [shapeInformationType=" + shapeInformationType + ", pointO=" + pointO + ", pointA="
+				+ pointA + ", pointH=" + pointH + ", baseLength=" + baseLength + ", height=" + height + "]";
 	}
 
 }

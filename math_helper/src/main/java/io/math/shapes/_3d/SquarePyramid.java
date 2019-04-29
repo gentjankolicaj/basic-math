@@ -19,7 +19,7 @@ public class SquarePyramid extends Shape3D {
 	private Point pointA;
 	private Point pointH;
 
-	private double baseLength;
+	private double baseSideLength;
 	private double height;
 
 	public SquarePyramid(Point pointO, Point pointA, Point pointH) {
@@ -30,9 +30,9 @@ public class SquarePyramid extends Shape3D {
 		this.shapeInformationType = ShapeInformationType.POINT;
 	}
 
-	public SquarePyramid(double baseLength, double height) {
+	public SquarePyramid(double baseSideLength, double height) {
 		super();
-		this.baseLength = baseLength;
+		this.baseSideLength = baseSideLength;
 		this.height = height;
 		this.shapeInformationType = ShapeInformationType.COMMON_MEASURE;
 	}
@@ -61,12 +61,12 @@ public class SquarePyramid extends Shape3D {
 		this.pointH = pointH;
 	}
 
-	public double getBaseLength() {
-		return baseLength;
+	public double getBaseSideLength() {
+		return baseSideLength;
 	}
 
-	public void setBaseLength(double baseLength) {
-		this.baseLength = baseLength;
+	public void setBaseSideLength(double baseSideLength) {
+		this.baseSideLength = baseSideLength;
 	}
 
 	public double getHeight() {
@@ -79,7 +79,7 @@ public class SquarePyramid extends Shape3D {
 
 	@Override
 	public Map<DetailType, Object> getDetails() {
-		Double[] measure = { new Double(baseLength), new Double(height) };
+		Double[] measure = { new Double(baseSideLength), new Double(height) };
 		Point[] points = { pointO, pointA, pointH };
 		Map<DetailType, Object> map = new HashMap<>();
 		map.put(DetailType.POINT, points);
@@ -95,7 +95,7 @@ public class SquarePyramid extends Shape3D {
 	@Override
 	public String toString() {
 		return "SquarePyramid [shapeInformationType=" + shapeInformationType + ", pointO=" + pointO + ", pointA="
-				+ pointA + ", pointH=" + pointH + ", baseLength=" + baseLength + ", height=" + height + "]";
+				+ pointA + ", pointH=" + pointH + ", baseSideLength=" + baseSideLength + ", height=" + height + "]";
 	}
 
 }

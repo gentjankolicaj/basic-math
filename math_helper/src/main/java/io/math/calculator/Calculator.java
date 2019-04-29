@@ -13,33 +13,25 @@ import io.math.shapes._3d.Shape3D;
  */
 public class Calculator extends AbstractCalculator {
 
-	private AreaFormula areaFormula;
-	private PerimeterFormula perimeterFormula;
-	private SurfaceAreaFormula surfaceAreaFormula;
-	private VolumeFormula volumeFormula;
 
 	public Calculator() {
 		super();
-		this.areaFormula = new AreaFormula();
-		this.perimeterFormula = new PerimeterFormula();
-		this.surfaceAreaFormula = new SurfaceAreaFormula();
-		this.volumeFormula = new VolumeFormula();
 
 	}
 
 	@Override
 	public double calculatePerimeter(Shape2D shape2d) throws RuntimeException {
-		return perimeterFormula.apply(shape2d);
+		return PerimeterFormula.apply(shape2d);
 	}
 
 	@Override
 	public double[] calculatePerimeters(Shape2D... shape2d) throws RuntimeException {
-		return perimeterFormula.apply(shape2d);
+		return PerimeterFormula.apply(shape2d);
 	}
 
 	@Override
 	public double calculatePerimeter(Shape2D... shape2d) throws RuntimeException {
-		double[] arrayPerimeter = perimeterFormula.apply(shape2d);
+		double[] arrayPerimeter = PerimeterFormula.apply(shape2d);
 		double total = 0.0;
 		for (double tmp : arrayPerimeter)
 			total += tmp;
@@ -48,56 +40,60 @@ public class Calculator extends AbstractCalculator {
 
 	@Override
 	public double calculateArea(Shape2D shape2d) throws RuntimeException {
-		// TODO Auto-generated method stub
-		return 0;
+		return AreaFormula.apply(shape2d);
 	}
 
 	@Override
 	public double[] calculateAreas(Shape2D... shape2d) throws RuntimeException {
-		// TODO Auto-generated method stub
-		return null;
+	return AreaFormula.apply(shape2d);
 	}
 
 	@Override
 	public double calculateArea(Shape2D... shape2d) throws RuntimeException {
-		// TODO Auto-generated method stub
-		return 0;
+		double[] areaArray=AreaFormula.apply(shape2d);
+		double total=0.0;
+		for(double tmp:areaArray)
+			total+=tmp;
+		return total;
 	}
 
 	@Override
 	public double calculateSurfaceArea(Shape3D shape3d) throws RuntimeException {
-		// TODO Auto-generated method stub
-		return 0;
+		return SurfaceAreaFormula.apply(shape3d);
 	}
 
 	@Override
 	public double[] calculateSurfaceAreas(Shape3D... shape3d) throws RuntimeException {
-		// TODO Auto-generated method stub
-		return null;
+		return SurfaceAreaFormula.apply(shape3d);
 	}
 
 	@Override
 	public double calculateSurfaceArea(Shape3D... shape3d) throws RuntimeException {
-		// TODO Auto-generated method stub
-		return 0;
+		double[] surfaceAreaArray=SurfaceAreaFormula.apply(shape3d);
+		double total=0.0;
+		for(double tmp:surfaceAreaArray)
+			total+=tmp;
+		return total;
 	}
 
 	@Override
 	public double calculateVolume(Shape3D shape3d) throws RuntimeException {
-		// TODO Auto-generated method stub
-		return 0;
+		return VolumeFormula.apply(shape3d);
 	}
 
 	@Override
 	public double[] calculateVolumes(Shape3D... shape3d) throws RuntimeException {
-		// TODO Auto-generated method stub
-		return null;
+		return VolumeFormula.apply(shape3d);
 	}
 
 	@Override
 	public double calculateVolume(Shape3D... shape3d) throws RuntimeException {
-		// TODO Auto-generated method stub
-		return 0;
+		double[] volumeArray=VolumeFormula.apply(shape3d);
+		double total=0.0;
+		for(double tmp:volumeArray)
+			total+=tmp;
+		
+		return total;
 	}
 
 }

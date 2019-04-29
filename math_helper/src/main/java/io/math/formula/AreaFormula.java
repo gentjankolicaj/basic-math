@@ -20,13 +20,13 @@ import io.math.utils.FormulaUtils;
  * @author gentjan kolicaj
  *
  */
-public class AreaFormula implements Formula<Shape2D> {
+public class AreaFormula{
 
 	public AreaFormula() {
 	}
 
-	@Override
-	public double apply(Shape2D t) throws RuntimeException {
+	
+	public static double apply(Shape2D t) throws RuntimeException {
 		if (t instanceof Line) {
 			return 0.0;
 		} else if (t instanceof Triangle) {
@@ -95,8 +95,8 @@ public class AreaFormula implements Formula<Shape2D> {
 
 	}
 
-	@Override
-	public double[] apply(Shape2D... t) throws RuntimeException {
+
+	public static double[] apply(Shape2D... t) throws RuntimeException {
 		double[] array = new double[t.length];
 		for (int i = 0; i < t.length; i++) {
 			double area = apply(t[i]);

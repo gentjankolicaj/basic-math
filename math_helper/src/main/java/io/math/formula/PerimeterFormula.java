@@ -20,13 +20,13 @@ import io.math.utils.DistanceUtils;
  * @author gentjan kolicaj
  *
  */
-public class PerimeterFormula implements Formula<Shape2D> {
+public class PerimeterFormula {
 
 	public PerimeterFormula() {
 	}
 
-	@Override
-	public double apply(Shape2D t) throws RuntimeException {
+	
+	public static double apply(Shape2D t) throws RuntimeException {
 		if (t instanceof Line) {
 			Line l = (Line) t;
 			if (l.getShapeInformationType().equals(ShapeInformationType.COMMON_MEASURE)) {
@@ -150,8 +150,7 @@ public class PerimeterFormula implements Formula<Shape2D> {
 					"Shape unknown : " + t + ".Formula for finding perimeter of this shape not found !!!");
 	}
 
-	@Override
-	public double[] apply(Shape2D... t) throws RuntimeException {
+	public static double[] apply(Shape2D... t) throws RuntimeException {
 		double[] array = new double[t.length];
 		for (int i = 0; i < t.length; i++) {
 			double perimeter = apply(t[i]);

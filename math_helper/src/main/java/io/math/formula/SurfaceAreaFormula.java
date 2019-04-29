@@ -28,22 +28,22 @@ import io.math.utils.FormulaUtils;
  * @author gentjan kolicaj
  *
  */
-public class SurfaceAreaFormula implements Formula<Shape3D> {
+public class SurfaceAreaFormula {
 
 	public SurfaceAreaFormula() {
 	}
 
-	@Override
-	public double apply(Shape3D t) throws RuntimeException {
+	
+	public static double apply(Shape3D t) throws RuntimeException {
 		if (t instanceof Cone) {
 			Cone c = (Cone) t;
 			if (c.getShapeInformationType().equals(ShapeInformationType.COMMON_MEASURE)) {
 				return Math.PI * c.getRadius() * c.getRadius() + Math.PI * c.getRadius()
 						* Math.sqrt(c.getRadius() * c.getRadius() + c.getHeight() * c.getHeight());
 			} else {
-				double a = DistanceUtils.distance(c.getPointO(), c.getPointA());
+				double r = DistanceUtils.distance(c.getPointO(), c.getPointA());
 				double h = DistanceUtils.distance(c.getPointO(), c.getPointH());
-				return Math.PI * a * a + Math.PI * a * Math.sqrt(a * a + h * h);
+				return Math.PI * r * r + Math.PI * r * Math.sqrt(r * r + h * h);
 			}
 		} else if (t instanceof Cube) {
 			Cube c = (Cube) t;
@@ -81,9 +81,9 @@ public class SurfaceAreaFormula implements Formula<Shape3D> {
 		} else if (t instanceof SquarePyramid) {
 			SquarePyramid s = (SquarePyramid) t;
 			if (s.getShapeInformationType().equals(ShapeInformationType.COMMON_MEASURE)) {
-				double baseArea = s.getBaseLength() * s.getBaseLength();
-				double slantHeightOfPyramid = FormulaUtils.usePythagorasTheorem(s.getBaseLength() / 2, s.getHeight());
-				double basePerimeter = 4 * s.getBaseLength();
+				double baseArea = s.getBaseSideLength() * s.getBaseSideLength();
+				double slantHeightOfPyramid = FormulaUtils.usePythagorasTheorem(s.getBaseSideLength() / 2, s.getHeight());
+				double basePerimeter = 4 * s.getBaseSideLength();
 				return (slantHeightOfPyramid * basePerimeter) / 2 + baseArea;
 			} else {
 				double baseLength = DistanceUtils.distance(s.getPointO(), s.getPointA());
@@ -109,8 +109,8 @@ public class SurfaceAreaFormula implements Formula<Shape3D> {
 
 	}
 
-	@Override
-	public double[] apply(Shape3D... t) throws RuntimeException {
+	
+	public static double[] apply(Shape3D... t) throws RuntimeException {
 		double[] array = new double[t.length];
 		for (int i = 0; i < t.length; i++) {
 			double surfaceArea = apply(t[i]);
